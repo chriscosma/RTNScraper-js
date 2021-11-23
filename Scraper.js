@@ -129,21 +129,22 @@ class ScraperKernel {
             console.error(e);
         }
     }
+
+    getTeamList(sex, year, callback) {
+        try {
+            this.validateSex(sex);
+            this.validateYear(sex, year);
+            this.sendRequest(paths.getTeamListPath(sex, year), data => callback(data));
+        } catch (e) {
+            console.error(e);
+        }
+    }
 }
 
 class Scraper extends ScraperKernel {
     constructor() {
         super();
     }
-
-    // getAllTeams(sex, year) {
-    //     try {
-    //         this.validateSex(sex);
-    //         this.validateYear(sex, year);
-    //     } catch (e) {
-    //         console.error(e);
-    //     }
-    // }
 }
 
 module.exports = Scraper;
