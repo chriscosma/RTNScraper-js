@@ -2,7 +2,7 @@ const https = require('https');
 const constants = require('./Constants');
 const paths = require('./Paths');
 
-class Scraper {
+class ScraperKernel {
     constructor() {
     }
 
@@ -129,6 +129,21 @@ class Scraper {
             console.error(e);
         }
     }
+}
+
+class Scraper extends ScraperKernel {
+    constructor() {
+        super();
+    }
+
+    // getAllTeams(sex, year) {
+    //     try {
+    //         this.validateSex(sex);
+    //         this.validateYear(sex, year);
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // }
 }
 
 module.exports = Scraper;
