@@ -1,0 +1,12 @@
+{
+  "name": "RTNScraper-js",
+  "version": "1.0.0",
+  "description": "Scraper for RoadToNationals",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/chriscosma/RTNScraper-js",
+    "type": "git"
+  },
+  "author": "Christopher Cosma <cosma.5@osu.edu>",
+  "license": "MIT"
+}
