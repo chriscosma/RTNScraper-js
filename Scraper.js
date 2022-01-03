@@ -55,93 +55,138 @@ class ScraperKernel {
         }
     }
 
-    getCurrentSeasonAndWeek(sex, year, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getCurrentSeasonAndWeekPath(sex, year), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getCurrentSeasonAndWeek(sex, year) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getCurrentSeasonAndWeekPath(sex, year), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getFinalResults(sex, year, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getFinalResultsPath(sex, year), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getFinalResults(sex, year) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getFinalResultsPath(sex, year), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getResults(sex, year, weekNumber, teamOrIndividual, event, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.validateEvent(event);
-            this.sendRequest(paths.getResultsPath(sex, year, weekNumber, teamOrIndividual, event), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getResults(sex, year, weekNumber, teamOrIndividual, event) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.validateEvent(event);
+                self.sendRequest(paths.getResultsPath(sex, year, weekNumber, teamOrIndividual, event), data => {
+                    resolve(data);
+                });
+            } catch (e) {
+                reject(e);
+            }
+        });
     }
 
-    getRoster(sex, year, teamId, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getRosterPath(sex, year, teamId), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getRoster(sex, year, teamId) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getRosterPath(sex, year, teamId), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getGymnastMeetResults(sex, year, gymnastId, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getGymnastMeetResultsPath(sex, year, gymnastId), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getGymnastMeetResults(sex, year, gymnastId) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getGymnastMeetResultsPath(sex, year, gymnastId), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getMeetResults(sex, meetId, callback) {
-        try {
-            this.validateSex(sex);
-            this.sendRequest(paths.getMeetResultsPath(sex, meetId), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getMeetResults(sex, meetId) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.sendRequest(paths.getMeetResultsPath(sex, meetId), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getSeasonWeeks(sex, year, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getSeasonWeeksPath(sex, year), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getSeasonWeeks(sex, year) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getSeasonWeeksPath(sex, year), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getSchedule(sex, data, callback) {
-        try {
-            this.validateSex(sex);
-            this.sendRequest(paths.getSchedulePath(sex, data), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getSchedule(sex, date) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.sendRequest(paths.getSchedulePath(sex, date), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 
-    getTeamList(sex, year, callback) {
-        try {
-            this.validateSex(sex);
-            this.validateYear(sex, year);
-            this.sendRequest(paths.getTeamListPath(sex, year), data => callback(data));
-        } catch (e) {
-            console.error(e);
-        }
+    getTeamList(sex, year) {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+            try {
+                self.validateSex(sex);
+                self.validateYear(sex, year);
+                self.sendRequest(paths.getTeamListPath(sex, year), data => {
+                    resolve(data);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
     }
 }
 
