@@ -16,9 +16,13 @@ class ScraperKernel {
     }
 
     sendRequest(path, callback) {
+        let chunks = []
         const req = https.request(this.options(path), res => {
             res.on('data', d => {
-                callback(JSON.parse(d.toString()));
+                chunks.push(d);
+            }).on('end', () => {
+                let data = Buffer.concat(chunks);
+                callback(JSON.parse(data));
             });
         });
 
