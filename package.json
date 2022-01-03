@@ -1,6 +1,6 @@
 {
   "name": "rtnscraper",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Scraper for RoadToNationals",
   "main": "index.js",
   "repository": {
