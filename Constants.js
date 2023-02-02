@@ -4,7 +4,9 @@ const ScraperConstants = {
     Men: 'men',
     Women: 'women',
     EarliestMensYear: 2012,
-    EarliestWomensYear: 1998
+    EarliestWomensYear: 1998,
+    NCAA: 0,
+    GymACT: 1
 };
 
 const MensEvents = {

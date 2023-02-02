@@ -7,6 +7,6 @@ module.exports = {
     getGymnastMeetResultsPath: (sex, year, gymnastId) => `/api/${sex}/gymnast/${year}/${gymnastId}`,
     getMeetResultsPath: (sex, meetId) => `/api/${sex}/meetresults/${meetId}`,
     getSeasonWeeksPath: (sex, year) => `/api/${sex}/yearweeks/${year}`,
-    getSchedulePath: (sex, date) => `/api/${sex}/schedulesplit/${date}/0/0`,
+    getSchedulePath: (sex, date) => `/api/${sex}/schedulesplit/${date}/0/${ncaaOrGymact}`,
     getTeamListPath: (sex, year) => `/api/${sex}/gymnasts2/${year}/0`
 };

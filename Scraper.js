@@ -160,12 +160,12 @@ class ScraperKernel {
         });
     }
 
-    getSchedule(sex, date) {
+    getSchedule(sex, date, ncaaOrGymact) {
         var self = this;
         return new Promise(function(resolve, reject) {
             try {
                 self.validateSex(sex);
-                self.sendRequest(paths.getSchedulePath(sex, date), data => {
+                self.sendRequest(paths.getSchedulePath(sex, date, ncaaOrGymact), data => {
                     resolve(data);
                 });
             } catch (err) {
